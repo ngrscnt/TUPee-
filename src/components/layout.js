@@ -1,10 +1,12 @@
+import { Link, Links } from "react-router-dom"
+
 export function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-danger border-bottom box-shadow">
       <div className="container">
-        <a className="navbar-brand text-white" href="#">
+        <Link className="navbar-brand text-white" to="/">
           <img src="./tupee_logo.png" alt="..." width="30" className="me-2"/> TUPee
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,9 +21,9 @@ export function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link text-light" aria-current="page" href="#">
-                Home
-              </a>
+              <Link className="nav-link text-light" aria-current="pages" to="/admin/products">
+                Home 
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <a
@@ -35,24 +37,24 @@ export function Navbar() {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/orders">
                     My Order
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <hr className="dropdown-divider"/>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/wishlists">
                     Wishlists
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" aria-current="page" href="#">
+              <Link className="nav-link text-light" aria-current="pages" to="/SProfile">
                 Seller's Profile
-              </a>
+              </Link>
             </li>
           </ul>
           <form className="d-flex" role="search">
@@ -79,17 +81,17 @@ export function Navbar() {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/profile">
                     Profile
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <hr className="dropdown-divider"/>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/logout">
                     Log Out
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
