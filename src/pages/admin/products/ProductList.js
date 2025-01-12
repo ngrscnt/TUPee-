@@ -5,7 +5,7 @@ export default function ProductList() {
     const [products, setProducts] = useState([])
 
     function getProducts() {
-        fetch("http://localhost:8080/products")
+        fetch("http://localhost:8080/products?_sort=id&_order=desc")
         .then(response => {
             if (response.ok) {
                 return response.json()
@@ -29,9 +29,9 @@ export default function ProductList() {
 
             <div className="row mb-3">
                 <div className="col">
-                     <Link className="btn btn-secondary me-1" to="/admin/products/create" role="button">Create Product</Link>
+                     <Link className="btn btn-danger me-1" to="/admin/products/create" role="button">Create Product</Link>
                      <button type="button" className="btn btn-outline-secondary"
-                     onClick={ getProducts}>Refresh</button>
+                     onClick={getProducts}>Refresh</button>
                 </div>
                 <div className="col">
 
@@ -65,7 +65,7 @@ export default function ProductList() {
                                     <td><img src={"http://localhost:8080/images/" + product.imageFilename}
                                         width="100" alt="..."/></td>
                                     <td style={{ width: "10px", whiteSpace: "nowrap" }}>
-                                        <Link className='btn btn-primary btn-sm me-1'
+                                        <Link className='btn btn-secondary btn-sm me-1'
                                             to={"/admin/products/edit/" + product.id}>Edit</Link>
                                         <button type="button" className="btn btn-danger btn-sm">Delete</button>
                                     </td>

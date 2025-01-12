@@ -7,6 +7,7 @@ import SProfile from './pages/SProfile';
 import NotFound from './pages/NotFound';
 import Shop from './pages/Shop';
 import ProductList from './pages/admin/products/ProductList';
+import CreateProduct from './pages/admin/products/CreateProduct';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin/products" element={<ProductList />} />
+        <Route path="/admin/products/create" element={<CreateProduct />} />
         <Route path="/SProfile" element={<SProfile />} />
         <Route path="/Shop" element={<Shop/>} />
         <Route path="*" element={<NotFound />} />
