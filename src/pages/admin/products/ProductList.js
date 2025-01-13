@@ -23,6 +23,22 @@ export default function ProductList() {
 
     useEffect(getProducts, [])
 
+    function deleteProduct(id) {
+        fetch("http://localhost:8080/products/" + id, {
+            method: "DELETE"
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error()
+            }
+
+            getProducts()
+        })
+        .catch(error => {
+            alert("Unable to delete the product")
+        })
+    }
+
     return (
         <div className="container my-4">
             <h2 className="text-center mb-4">Bili na po kayo!</h2>
@@ -67,7 +83,8 @@ export default function ProductList() {
                                     <td style={{ width: "10px", whiteSpace: "nowrap" }}>
                                         <Link className='btn btn-secondary btn-sm me-1'
                                             to={"/admin/products/edit/" + product.id}>Edit</Link>
-                                        <button type="button" className="btn btn-danger btn-sm">Delete</button>
+                                        <button type="button" className="btn btn-danger btn-sm"
+                                            onClick={() => deleteProduct(product.id)}>Delete</button>
                                     </td>
                                 </tr>
                             )

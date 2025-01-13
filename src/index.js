@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound';
 import Shop from './pages/Shop';
 import ProductList from './pages/admin/products/ProductList';
 import CreateProduct from './pages/admin/products/CreateProduct';
+import EditProduct from './pages/admin/products/EditProduct';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/admin/products" element={<ProductList />} />
         <Route path="/admin/products/create" element={<CreateProduct />} />
+        <Route path="/admin/products/edit/:id" element={<EditProduct />} />
         <Route path="/SProfile" element={<SProfile />} />
         <Route path="/Shop" element={<Shop/>} />
         <Route path="*" element={<NotFound />} />
